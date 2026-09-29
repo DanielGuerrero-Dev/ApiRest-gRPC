@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+package usuarios;
+
+// Servicio: qué operación se puede pedir.
+service UsuariosService {
+  rpc CrearUsuario (UsuarioRequest) returns (UsuarioResponse);
+}
+
+// Mensaje de envío: lo que manda el cliente.
+message UsuarioRequest {
+  string nombre = 1;
+  string correo = 2;
+}
+
+// Mensaje de respuesta: lo que devuelve el servicio.
+message UsuarioResponse {
+  int32 id = 1;
+  string nombre = 2;
+  string correo = 3;
+  string mensaje = 4;
+}
