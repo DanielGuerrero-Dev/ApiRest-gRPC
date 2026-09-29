@@ -1,21 +1,39 @@
 ﻿syntax = "proto3";
 package usuarios;
 
-// Servicio: qué operación se puede pedir.
+// Servicio: operaciones disponibles.
 service UsuariosService {
+  // Crea un usuario.
   rpc CrearUsuario (UsuarioRequest) returns (UsuarioResponse);
+
+  // Lista todos los usuarios registrados.
+  rpc ListarUsuarios (ListarRequest) returns (ListarResponse);
+
+  // Suscripción: el servidor envía usuarios en flujo (streaming).
+  rpc SuscribirUsuarios (SuscripcionRequest) returns (stream UsuarioResponse);
 }
 
-// Mensaje de envío: lo que manda el cliente.
+// Envío: datos para crear un usuario.
 message UsuarioRequest {
   string nombre = 1;
   string correo = 2;
 }
 
-// Mensaje de respuesta: lo que devuelve el servicio.
+// Respuesta: un usuario.
 message UsuarioResponse {
   int32 id = 1;
   string nombre = 2;
   string correo = 3;
   string mensaje = 4;
 }
+
+// Envío: vacío, listar no necesita parámetros.
+message ListarRequest {}
+
+// Respuesta: lista de usuarios.
+message ListarResponse {
+  repeated UsuarioResponse usuarios = 1;
+}
+
+// Envío: vacío, solo abre la suscripción.
+message SuscripcionRequest {}
