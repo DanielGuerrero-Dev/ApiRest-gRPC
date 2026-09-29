@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0eusuarios.proto\x12\x08usuarios\"0\n\x0eUsuarioRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63orreo\x18\x02 \x01(\t\"N\n\x0fUsuarioResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06nombre\x18\x02 \x01(\t\x12\x0e\n\x06\x63orreo\x18\x03 \x01(\t\x12\x0f\n\x07mensaje\x18\x04 \x01(\t\"\x0f\n\rListarRequest\"=\n\x0eListarResponse\x12+\n\x08usuarios\x18\x01 \x03(\x0b\x32\x19.usuarios.UsuarioResponse\"\x14\n\x12SuscripcionRequest2\xeb\x01\n\x0fUsuariosService\x12\x43\n\x0c\x43rearUsuario\x12\x18.usuarios.UsuarioRequest\x1a\x19.usuarios.UsuarioResponse\x12\x43\n\x0eListarUsuarios\x12\x17.usuarios.ListarRequest\x1a\x18.usuarios.ListarResponse\x12N\n\x11SuscribirUsuarios\x12\x1c.usuarios.SuscripcionRequest\x1a\x19.usuarios.UsuarioResponse0\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0eusuarios.proto\x12\x08usuarios\"0\n\x0eUsuarioRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63orreo\x18\x02 \x01(\t\"N\n\x0fUsuarioResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06nombre\x18\x02 \x01(\t\x12\x0e\n\x06\x63orreo\x18\x03 \x01(\t\x12\x0f\n\x07mensaje\x18\x04 \x01(\t\"\x0f\n\rListarRequest\"=\n\x0eListarResponse\x12+\n\x08usuarios\x18\x01 \x03(\x0b\x32\x19.usuarios.UsuarioResponse\"\x14\n\x12SuscripcionRequest2\xea\x01\n\x0eUsuarioService\x12\x43\n\x0c\x43rearUsuario\x12\x18.usuarios.UsuarioRequest\x1a\x19.usuarios.UsuarioResponse\x12\x43\n\x0eListarUsuarios\x12\x17.usuarios.ListarRequest\x1a\x18.usuarios.ListarResponse\x12N\n\x11SuscribirUsuarios\x12\x1c.usuarios.SuscripcionRequest\x1a\x19.usuarios.UsuarioResponse0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +41,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTARRESPONSE']._serialized_end=236
   _globals['_SUSCRIPCIONREQUEST']._serialized_start=238
   _globals['_SUSCRIPCIONREQUEST']._serialized_end=258
-  _globals['_USUARIOSSERVICE']._serialized_start=261
-  _globals['_USUARIOSSERVICE']._serialized_end=496
+  _globals['_USUARIOSERVICE']._serialized_start=261
+  _globals['_USUARIOSERVICE']._serialized_end=495
 # @@protoc_insertion_point(module_scope)

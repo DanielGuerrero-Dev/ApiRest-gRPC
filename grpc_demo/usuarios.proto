@@ -2,7 +2,7 @@
 package usuarios;
 
 // Servicio: operaciones disponibles.
-service UsuariosService {
+service UsuarioService {
   // Crea un usuario.
   rpc CrearUsuario (UsuarioRequest) returns (UsuarioResponse);
 

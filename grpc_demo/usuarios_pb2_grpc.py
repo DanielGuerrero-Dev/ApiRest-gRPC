@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class UsuariosServiceStub:
+class UsuarioServiceStub:
     """Servicio: operaciones disponibles.
     """
 
@@ -36,23 +36,23 @@ class UsuariosServiceStub:
             channel: A grpc.Channel.
         """
         self.CrearUsuario = channel.unary_unary(
-                '/usuarios.UsuariosService/CrearUsuario',
+                '/usuarios.UsuarioService/CrearUsuario',
                 request_serializer=usuarios__pb2.UsuarioRequest.SerializeToString,
                 response_deserializer=usuarios__pb2.UsuarioResponse.FromString,
                 _registered_method=True)
         self.ListarUsuarios = channel.unary_unary(
-                '/usuarios.UsuariosService/ListarUsuarios',
+                '/usuarios.UsuarioService/ListarUsuarios',
                 request_serializer=usuarios__pb2.ListarRequest.SerializeToString,
                 response_deserializer=usuarios__pb2.ListarResponse.FromString,
                 _registered_method=True)
         self.SuscribirUsuarios = channel.unary_stream(
-                '/usuarios.UsuariosService/SuscribirUsuarios',
+                '/usuarios.UsuarioService/SuscribirUsuarios',
                 request_serializer=usuarios__pb2.SuscripcionRequest.SerializeToString,
                 response_deserializer=usuarios__pb2.UsuarioResponse.FromString,
                 _registered_method=True)
 
 
-class UsuariosServiceServicer:
+class UsuarioServiceServicer:
     """Servicio: operaciones disponibles.
     """
 
@@ -78,7 +78,7 @@ class UsuariosServiceServicer:
         raise NotImplementedError('Method not implemented!')
 
 
-def add_UsuariosServiceServicer_to_server(servicer, server):
+def add_UsuarioServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CrearUsuario': grpc.unary_unary_rpc_method_handler(
                     servicer.CrearUsuario,
@@ -97,13 +97,13 @@ def add_UsuariosServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'usuarios.UsuariosService', rpc_method_handlers)
+            'usuarios.UsuarioService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('usuarios.UsuariosService', rpc_method_handlers)
+    server.add_registered_method_handlers('usuarios.UsuarioService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class UsuariosService:
+class UsuarioService:
     """Servicio: operaciones disponibles.
     """
 
@@ -121,7 +121,7 @@ class UsuariosService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/usuarios.UsuariosService/CrearUsuario',
+            '/usuarios.UsuarioService/CrearUsuario',
             usuarios__pb2.UsuarioRequest.SerializeToString,
             usuarios__pb2.UsuarioResponse.FromString,
             options,
@@ -148,7 +148,7 @@ class UsuariosService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/usuarios.UsuariosService/ListarUsuarios',
+            '/usuarios.UsuarioService/ListarUsuarios',
             usuarios__pb2.ListarRequest.SerializeToString,
             usuarios__pb2.ListarResponse.FromString,
             options,
@@ -175,7 +175,7 @@ class UsuariosService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/usuarios.UsuariosService/SuscribirUsuarios',
+            '/usuarios.UsuarioService/SuscribirUsuarios',
             usuarios__pb2.SuscripcionRequest.SerializeToString,
             usuarios__pb2.UsuarioResponse.FromString,
             options,

@@ -2,11 +2,11 @@
 
 ## Contrato gRPC
 
-Archivo: `GRPC/usuarios.proto`
+Archivo: `grpc_demo/usuarios.proto`
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
-| `UsuariosService` | service | Servicio de usuarios |
+| `UsuarioService` | service | Servicio de usuarios |
 | `CrearUsuario` | rpc | Recibe `UsuarioRequest`, devuelve `UsuarioResponse` |
 | `ListarUsuarios` | rpc | Recibe `ListarRequest`, devuelve `ListarResponse` |
 | `SuscribirUsuarios` | rpc (stream) | Recibe `SuscripcionRequest`, devuelve un flujo de `UsuarioResponse` |
@@ -18,7 +18,7 @@ Archivo: `GRPC/usuarios.proto`
 
 ## Generar el código
 
-Desde la carpeta `GRPC` ejecutar:
+Desde la carpeta `grpc_demo` ejecutar:
 
     py -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. usuarios.proto
 
